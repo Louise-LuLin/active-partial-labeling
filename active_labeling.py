@@ -32,8 +32,8 @@ class BuildDataLoader:
 
         with open(folder + '_string.txt', 'r') as x_file, open(folder + '_label.txt', 'r') as y_file: 
             for x, y in zip(x_file, y_file):
-                x = [char for char in x.replace("\n",'')]
-                y = y.replace("\n",'').split(',')
+                x = [char for char in x.lower().replace("\n",'')]
+                y = y.lower().replace("\n",'').split(',')
                 if(len(y) > 1):
                     if len(y[-1]) == 0:
                         y = y[:-1]
